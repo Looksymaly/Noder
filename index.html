@@ -3,40 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker Download Button</title>
+    <title>Get source code</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+        
         body {
             background-color: rgb(10, 10, 10);
-            color: limegreen;
-            text-align: center;
-            font-family: 'VT323', monospace;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 50px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding: 0 20px;
         }
 
-        .download-btn {
-            font-size: 24px;
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        button {
+            font-size: 16px;
+            font-weight: 900;
+            margin: 10px;
             padding: 15px 30px;
-            border: 2px solid limegreen;
-            background-color: black;
-            color: limegreen;
+            border: none;
             cursor: pointer;
-            font-family: 'VT323', monospace;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
+            border-radius: 10px;
+            background-color: rgb(30, 30, 30);
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .download-btn:hover {
-            background-color: limegreen;
-            color: black;
+        button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 120px; /* Adjust size */
+            height: 120px; /* Adjust size */
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        #loadstring {
+            font-size: 20px;
+            font-weight: 700;
+            color: #b3b3b3;
+            margin-top: 20px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .image-container img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .button-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome, Hacker!</h1>
-    <a href="yourfile.zip" download class="download-btn">Download</a>
+    <h1>Welcome to Noder 1.0</h1>
+
+    <div class="button-container">
+        <button onclick="openSourcePage()">Open Source</button>
+        <button onclick="downloadTextFile()">Download TXT File</button>
+    </div>
+
+    <div id="loadstring">Noder 1.0 (Beta)</div>
+
+    <div class="image-container">
+        <button onclick="learnMore()">Learn more!</button>
+        <!-- Image from GitHub repository -->
+        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
+    </div>
+
+    <script>
+        function openSourcePage() {
+            // Opens the source code page
+            window.open('https://looksymaly.github.io/Getnoder.xyz/sourcePage.html', '_blank');
+        }
+
+        function learnMore() {
+            // Redirect to the Learn More page
+            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
+        }
+
+        function downloadTextFile() {
+            const content = "This is a text file containing details about Noder.\n\nNoder 1.0 (Beta)";
+            const blob = new Blob([content], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'NoderDetails.txt';
+            link.click();
+        }
+    </script>
+
 </body>
 </html>
