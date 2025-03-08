@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Hacker Download Button</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            background-color: rgb(10, 10, 10);
+            color: limegreen;
+            text-align: center;
+            font-family: 'VT323', monospace;
+            margin: 0;
+            padding: 50px;
+        }
+
+        .download-btn {
+            font-size: 24px;
+            padding: 15px 30px;
+            border: 2px solid limegreen;
+            background-color: black;
+            color: limegreen;
+            cursor: pointer;
+            font-family: 'VT323', monospace;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: limegreen;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This site is hosted using GitHub Pages!</p>
+    <h1>Welcome, Hacker!</h1>
+    <a href="yourfile.zip" download class="download-btn">Download</a>
 </body>
 </html>
