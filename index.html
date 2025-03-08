@@ -122,11 +122,13 @@
         }
 
         function downloadSourceFile() {
-            // Create a link to download the Source.txt file from GitHub
+            // Automatically download the Source.txt file from GitHub
             const link = document.createElement('a');
             link.href = 'https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Source.txt';
             link.download = 'Source.txt';
-            link.click();
+            document.body.appendChild(link);  // Append to body
+            link.click();  // Trigger the download
+            document.body.removeChild(link);  // Clean up
         }
     </script>
 
