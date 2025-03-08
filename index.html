@@ -92,8 +92,7 @@
     <h1>Welcome to Noder 1.0</h1>
 
     <div class="button-container">
-        <button onclick="openSourcePage()">Open Source</button>
-        <button onclick="downloadTextFile()">Download TXT File</button>
+        <button onclick="downloadSourceFile()">Download Source.txt</button>
     </div>
 
     <div id="loadstring">Noder 1.0 (Beta)</div>
@@ -105,22 +104,16 @@
     </div>
 
     <script>
-        function openSourcePage() {
-            // Opens the source code page
-            window.open('https://looksymaly.github.io/Getnoder.xyz/sourcePage.html', '_blank');
-        }
-
         function learnMore() {
             // Redirect to the Learn More page
             window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
         }
 
-        function downloadTextFile() {
-            const content = "This is a text file containing details about Noder.\n\nNoder 1.0 (Beta)";
-            const blob = new Blob([content], { type: 'text/plain' });
+        function downloadSourceFile() {
+            // Create a link to download the Source.txt file from GitHub
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'NoderDetails.txt';
+            link.href = 'https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Source.txt';
+            link.download = 'Source.txt';
             link.click();
         }
     </script>
